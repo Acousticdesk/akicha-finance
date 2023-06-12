@@ -7,10 +7,13 @@ import {
   IconButton,
 } from "@chakra-ui/react";
 import { AddIcon } from "@chakra-ui/icons";
+import { useNavigate } from "react-router-dom";
 import { ExpensesStripe } from "./ExpensesStripe.tsx";
 import { CategoriesList } from "./CategoriesList.tsx";
 
 export function App() {
+  const navigate = useNavigate();
+
   return (
     <Container>
       <Flex flexDirection="column" h="100vh" pb={16}>
@@ -31,6 +34,7 @@ export function App() {
         aria-label="Add expenses"
         icon={<AddIcon />}
         colorScheme="red"
+        onClick={() => navigate("/create-expense")}
       />
     </Container>
   );

@@ -10,7 +10,7 @@ export function CategoriesList() {
         { value: 5, label: "Car" },
         { value: 5, label: "Pets" },
       ].map(({ value, label }) => (
-        <Box mt={2}>
+        <Box mt={2} key={label}>
           <Text>{label}</Text>
           <Progress
             colorScheme="green"
