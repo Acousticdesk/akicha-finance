@@ -1,4 +1,3 @@
-import { useRef, useEffect } from "react";
 import {
   Container,
   Button,
@@ -7,24 +6,21 @@ import {
   NumberInputField,
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
+import { Dial } from "./Dial.tsx";
 
 export function CreateExpense() {
-  const inputRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
-  useEffect(() => {
-    inputRef.current?.focus();
-  }, []);
   function handleSubmit() {
     navigate("/");
   }
   return (
-    <Container>
-      <Flex direction="column" h="100vh" justify="space-between" py={4}>
+    <Container h="100%">
+      <Flex direction="column" justify="space-between" pt={4} pb={8} h="100%">
         <NumberInput
+          isReadOnly
           display="block"
           mx="auto"
-          w="160px"
-          ref={inputRef}
+          w={160}
           name="amount"
           onKeyUp={(e) => {
             if (e.code === "Enter") {
@@ -32,9 +28,10 @@ export function CreateExpense() {
             }
           }}
         >
-          <NumberInputField />
+          <NumberInputField h={24} fontSize={40} textAlign="center" />
         </NumberInput>
-        <Button colorScheme="green" onClick={handleSubmit}>
+        <Dial />
+        <Button h={16} colorScheme="green" onClick={handleSubmit}>
           Add
         </Button>
       </Flex>

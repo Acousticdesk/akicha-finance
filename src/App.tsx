@@ -15,8 +15,8 @@ export function App() {
   const navigate = useNavigate();
 
   return (
-    <Container>
-      <Flex flexDirection="column" h="100vh" pb={16}>
+    <Container h="100%">
+      <Flex flexDirection="column" h="100%" pb={16}>
         <header>
           <Heading size="lg">June</Heading>
         </header>
