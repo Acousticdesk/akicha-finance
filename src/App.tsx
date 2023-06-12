@@ -16,7 +16,7 @@ export function App() {
 
   return (
     <Container h="100%">
-      <Flex flexDirection="column" h="100%" pb={16}>
+      <Flex flexDirection="column" h="100%" pb={24}>
         <header>
           <Heading size="lg">June</Heading>
         </header>
@@ -28,8 +28,11 @@ export function App() {
       </Flex>
       <IconButton
         position="fixed"
-        bottom="16px"
-        right="16px"
+        bottom={2}
+        right={2}
+        w={24}
+        h={24}
+        fontSize={24}
         borderRadius="50%"
         aria-label="Add expenses"
         icon={<AddIcon />}
