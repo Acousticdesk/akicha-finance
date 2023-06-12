@@ -1,5 +1,11 @@
 import { useRef, useEffect } from "react";
-import { Container, Button, Flex, Input } from "@chakra-ui/react";
+import {
+  Container,
+  Button,
+  Flex,
+  NumberInput,
+  NumberInputField,
+} from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 
 export function CreateExpense() {
@@ -14,19 +20,20 @@ export function CreateExpense() {
   return (
     <Container>
       <Flex direction="column" h="100vh" justify="space-between" py={4}>
-        <Input
+        <NumberInput
           display="block"
           mx="auto"
           w="160px"
           ref={inputRef}
-          type="number"
           name="amount"
           onKeyUp={(e) => {
             if (e.code === "Enter") {
               handleSubmit();
             }
           }}
-        />
+        >
+          <NumberInputField />
+        </NumberInput>
         <Button colorScheme="green" onClick={handleSubmit}>
           Add
         </Button>
