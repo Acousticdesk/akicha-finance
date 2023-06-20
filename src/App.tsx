@@ -8,8 +8,7 @@ import {
 } from "@chakra-ui/react";
 import { AddIcon } from "@chakra-ui/icons";
 import { useNavigate } from "react-router-dom";
-import { ExpensesStripe } from "./expenses";
-import { CategoriesList } from "./CategoriesList.tsx";
+import { ExpensesStripe, ExpensesCategoryList } from "./expenses";
 
 export function App() {
   const navigate = useNavigate();
@@ -23,7 +22,7 @@ export function App() {
         <ExpensesStripe />
         <Spacer />
         <Box my={4}>
-          <CategoriesList />
+          <ExpensesCategoryList />
         </Box>
       </Flex>
       <IconButton

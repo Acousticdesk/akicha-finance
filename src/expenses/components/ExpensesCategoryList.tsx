@@ -1,8 +1,7 @@
 import { Progress, Box, Text } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 
-// todo akicha: rename to ExpensesCategoriesList
-export function CategoriesList() {
+export function ExpensesCategoryList() {
   const navigate = useNavigate();
   // todo akicha: use ids instead
   return (
