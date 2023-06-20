@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import { App } from "./App.tsx";
-import { CreateExpense, CategoryDetails } from "./screens";
+import { CreateExpense, CategoryDetails, ManageCategory } from "./screens";
 
 export const router = createBrowserRouter([
   {
@@ -12,7 +12,11 @@ export const router = createBrowserRouter([
     element: <CategoryDetails />,
   },
   {
-    path: "/create-expense",
+    path: "/category/manage",
+    element: <ManageCategory />,
+  },
+  {
+    path: "/expense/create",
     element: <CreateExpense />,
   },
 ]);

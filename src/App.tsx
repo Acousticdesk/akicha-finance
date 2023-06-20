@@ -1,8 +1,11 @@
 import { Container, Box, Heading, Flex, IconButton } from "@chakra-ui/react";
-import { AddIcon, HamburgerIcon } from "@chakra-ui/icons";
+import { AddIcon } from "@chakra-ui/icons";
 import { useNavigate } from "react-router-dom";
 import { ExpensesStripe, ExpensesCategoryList } from "./expenses";
+import { AppDrawer } from "./components";
 
+// todo akicha: create a separate component for the header
+// todo akicha: create a separate component for the Add button
 export function App() {
   const navigate = useNavigate();
 
@@ -10,14 +13,9 @@ export function App() {
     <Box h="100%">
       <Flex flexDirection="column" h="100%" pb={24} justify="space-between">
         <header>
-          <Box p={4} background="green.400">
-            <IconButton
-              colorScheme="black"
-              variant="outline"
-              icon={<HamburgerIcon />}
-              aria-label="Open Menu"
-            />
-          </Box>
+          <Flex p={4} background="green.400" justify="flex-end">
+            <AppDrawer />
+          </Flex>
         </header>
         <Container>
           <Heading size="lg">June</Heading>
@@ -36,7 +34,7 @@ export function App() {
             aria-label="Add expenses"
             icon={<AddIcon />}
             colorScheme="red"
-            onClick={() => navigate("/create-expense")}
+            onClick={() => navigate("/expense/create")}
           />
         </Container>
       </Flex>
