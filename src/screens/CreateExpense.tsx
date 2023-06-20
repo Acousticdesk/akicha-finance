@@ -6,7 +6,7 @@ import {
   NumberInputField,
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
-import { Dial } from "./Dial.tsx";
+import { Dial } from "../expenses";
 import { useState } from "react";
 
 export function CreateExpense() {

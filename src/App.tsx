@@ -8,7 +8,7 @@ import {
 } from "@chakra-ui/react";
 import { AddIcon } from "@chakra-ui/icons";
 import { useNavigate } from "react-router-dom";
-import { ExpensesStripe } from "./ExpensesStripe.tsx";
+import { ExpensesStripe } from "./expenses";
 import { CategoriesList } from "./CategoriesList.tsx";
 
 export function App() {

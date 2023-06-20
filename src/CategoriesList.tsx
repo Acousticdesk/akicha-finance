@@ -1,6 +1,10 @@
 import { Progress, Box, Text } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 
+// todo akicha: rename to ExpensesCategoriesList
 export function CategoriesList() {
+  const navigate = useNavigate();
+  // todo akicha: use ids instead
   return (
     <Box>
       {[
@@ -10,7 +14,7 @@ export function CategoriesList() {
         { value: 5, label: "Car" },
         { value: 5, label: "Pets" },
       ].map(({ value, label }) => (
-        <Box mt={2} key={label}>
+        <Box mt={2} key={label} onClick={() => navigate(`/category/${label}`)}>
           <Text>{label}</Text>
           <Progress
             colorScheme="green"
